@@ -49,7 +49,7 @@
           <img class="site-logo d-none" src="<?=get_option('website_logo', BASE."assets/images/logo.png")?>" alt="Webstie logo">
           <img class="site-logo-white" src="<?=get_option('website_logo_white', BASE."assets/images/logo-white.png")?>" alt="Webstie logo">
         </a>
-        <div class="d-flex order-lg-2 ml-auto">
+        <div class="d-flex order-lg-2 ml-auto" >
           <ul class="navbar-nav list-inline ml-auto">
 
             <li class="nav-item list-inline-item">

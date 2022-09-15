@@ -56,7 +56,7 @@
         <div class="form-actions left">
           <input type="hidden" name="payment_id" value="<?php echo $payment_id; ?>">
           <input type="hidden" name="payment_method" value="<?php echo 'custom_paypal'; ?>">
-          <button type="submit" id="pay_button" class="btn round btn-primary btn-min-width mr-1 mb-1">
+          <button type="submit" class="btn round btn-primary btn-min-width mr-1 mb-1">
             <?=lang("Pay")?>
           </button>
         </div>

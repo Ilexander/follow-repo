@@ -18,6 +18,7 @@ class transactions extends My_UserController {
             "type"       => ['name' => lang('Payment_method'),         'class' => 'text-center'],
             "amount"     => ['name' => lang("Amount_includes_fee"),    'class' => 'text-center'],
             "txn_fee"    => ['name' => lang("Transaction_fee"),        'class' => 'text-center'],
+            "status"     => ['name' => lang("Status"),                 'class' => 'text-center'],
             "created"    => ['name' => lang("Created"),                'class' => 'text-center'],
         );
     }

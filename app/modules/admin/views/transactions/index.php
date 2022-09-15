@@ -48,9 +48,8 @@
                           <td></td>
                           <td>
                               <select name="status">
-                                  <option>all</option>
                                   <?php foreach ($statuses as $key => $status) {?>
-                                      <option id="<?=$status?>">
+                                      <option value="<?=$status?>" id="<?=$key?>">
                                           <?=$key?>
                                       </option>
                                   <?php } ?>

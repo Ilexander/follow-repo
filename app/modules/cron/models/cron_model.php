@@ -98,6 +98,16 @@ class cron_model extends MY_Model {
     {
         if ($option['task'] == 'item-new-update') {
             $order_log =  "Order ID - ". $params['order_id'];
+	    //25.07 test
+	    /*
+	    if (isset($params['response']['order'])) {
+                $data_item = [
+                    "api_order_id" => $params['response']['order'],
+                    "changed"      => NOW,
+                ];
+                $this->db->update($this->tb_main, $data_item, ["id" => $params['order_id']]);
+            }
+	    */
             if (!$params['response']) {
                 $data_item = [
                     "status"      => 'canceled',
@@ -129,11 +139,11 @@ class cron_model extends MY_Model {
                 
                 $this->db->update($this->tb_main, $data_item, ["id" => $params['order_id']]);
             }
-            if (isset($params['response']['error'])) {
-                $order_log .= " : ". $params['response']['error'];
+            if (isset($params['response']['error']) || isset($params['response']['errors'])) {
+                $order_log .= " : ". ($params['response']['error'] ?? json_encode($params['response']['errors']));
                 $data_item = [
                     "status"      => 'canceled',
-                    "note"        => $params['response']['error'],
+                    "note"        => ($params['response']['error'] ?? json_encode($params['response']['errors'])),
                     "changed"     => NOW,
                 ];
                 $this->db->update($this->tb_main, $data_item, ["id" => $params['order_id']]);
@@ -176,7 +186,7 @@ class cron_model extends MY_Model {
             $item = $params['item'];
             $order_log =  "Order ID - ". $item['id'];
 
-            if (isset($params['response']['error'])) {
+            if (isset($params['response']['error']) && $params['response']['error'] != 'Incorrect order ID' ) {
                 $order_log .= " : ". $params['response']['error'];
                 $data_item = [
                     "status"      => 'canceled',

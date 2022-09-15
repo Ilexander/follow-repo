@@ -233,14 +233,6 @@ class cron extends MX_Controller
     
     public function paypalStatus()
     {
-              $this->db->select("*");
-                $this->db->from(USERS);
-                $this->db->where('id', 45);
-                $query = $this->db->get();
-                $result = $query->result();
-                
-                var_dump($result);
-                die();
               require_once APPPATH.'modules/add_funds/controllers/add_funds.php';
               $add_funds = new add_funds();
 
@@ -423,5 +415,10 @@ class cron extends MX_Controller
         }
 
         $this->db->update(USERS, array('settings' => json_encode($settings)), array("id" => $_POST['user_id']));
+    }
+
+    public function buy()
+    {
+        redirect(cn("home"));
     }
 }

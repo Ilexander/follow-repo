@@ -161,4 +161,14 @@ class add_funds extends My_UserController
         );
         $this->template->build('payment_unsuccessfully', $data);
     }
+
+    public function add_funds_bonus_email($data_tnx, $payment_id = "")
+    {
+        $this->model->add_funds_bonus_email($data_tnx, $payment_id = "");
+    }
+
+    public function update_user_balance($uid, $current_balance, $new_funds){
+        $user_balance = $current_balance + $new_funds;
+        $this->db->update($this->tb_users, ["balance" => $user_balance], ["id" => $uid]);
+    }
 }

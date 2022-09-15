@@ -3,11 +3,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class transactions_model extends MY_Model {
 
+    private $statuses = [
+        'waiting' => -1,
+        'pending' => 0,
+        'paid' => 1
+    ];
     public function __construct()
     {
         parent::__construct();
         $this->tb_main     = TRANSACTION_LOGS;
         $this->tb_users               = USERS;
+        $this->payments              = PAYMENTS_METHOD;
     }
 
     public function list_items($params = null, $option = null, $filter = [])
@@ -36,11 +42,9 @@ class transactions_model extends MY_Model {
                 $this->db->where("p.type", $filter['payment_method']);
             }
 
-            if (isset($filter['status']) && $filter['status'] && $filter['status'] != 'all') {
-                $this->db->where("tl.status", $this->statuses[$filter['status']]);
-            } else {
-                $this->db->where('tl.status', 1);
-            }
+//            if (isset($filter['status']) && $filter['status'] && $filter['status'] != 'all') {
+////                $this->db->where("tl.status", $filter['status']);
+//            }
 
 //            $this->db->join($this->tb_users." as u", "u.id = tl.uid", 'left');
 //            if (isset($filter['user']) && $filter['user']) {
@@ -79,7 +83,7 @@ class transactions_model extends MY_Model {
         if ($day == "") {
             $day = 7;
         }
-        $SQL   = "DELETE FROM ".$this->tb_transaction_logs." WHERE `status` != 1 AND created < NOW() - INTERVAL ".$day." DAY";
+        $SQL   = "DELETE FROM ".$this->tb_main." WHERE `status` != 1 AND created < NOW() - INTERVAL ".$day." DAY";
         $query = $this->db->query($SQL);
         return $query;
     }

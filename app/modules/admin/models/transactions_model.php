@@ -8,6 +8,12 @@ class transactions_model extends MY_Model
     protected $filter_accepted;
     protected $field_search_accepted;
 
+    private $statuses = [
+        'waiting' => -1,
+        'pending' => 0,
+        'paid' => 1
+    ];
+
     public function __construct()
     {
         parent::__construct();
@@ -21,6 +27,17 @@ class transactions_model extends MY_Model
 
     public function list_items($params = null, $option = null, $filter = [])
     {
+
+        $filtered = [];
+
+        foreach ($filter as $key => $item) {
+            if($item && $item!== '') {
+                $filtered[$key] = $item;
+            }
+        }
+
+        $filter = $filtered;
+
         $result = null;
         if ($option['task'] == 'list-items') {
             $this->db->select('tl.*');
@@ -44,8 +61,8 @@ class transactions_model extends MY_Model
                 $this->db->where("p.type", $filter['payment_method']);
             }
 
-            if (isset($filter['status']) && $filter['status'] && $filter['status'] != 'all') {
-                $this->db->where("tl.status", $this->statuses[$filter['status']]);
+            if (isset($filter['status']) && $filter['status'] && $filter['status'] != 3) {
+                $this->db->where("tl.status", $filter['status']);
             }
 
             $this->db->join($this->tb_users." u", "tl.uid = u.id", 'left');

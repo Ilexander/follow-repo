@@ -1,7 +1,8 @@
 <style>
-  .search-box div.form-group{
+  .search-box div.form-group {
     margin-bottom: 0px !important;
   }
+
   .search-box .form-control {
     height: auto !important;
   }
@@ -9,18 +10,17 @@
 
 <header class="navbar navbar-expand-xl js-header">
   <div class="header-wrap">
-
     <a class="navbar-toggler mobile-menu">
       <span class="navbar-toggler-icon"><i class="icon fe fe-menu"></i></span>
     </a>
 
     <a href="<?php echo cn(); ?>" class="navbar-brand text-inherit mr-md-3">
-      <img src="<?php echo get_option('website_logo', BASE.'assets/images/logo.png'); ?>" alt="Website Logo" class="d-md-none navbar-brand-logo">
+      <img src="<?php echo get_option('website_logo', BASE . 'assets/images/logo.png'); ?>" alt="Website Logo" class="d-md-none navbar-brand-logo">
     </a>
-    
+
     <ul class="nav navbar-menu align-items-center order-1 order-lg-2">
       <li class="nav-item d-none d-lg-block">
-        <a class="nav-link" href="#customize" data-toggle="modal" >
+        <a class="nav-link" href="#customize" data-toggle="modal">
           <span class="nav-icon">
             <i class="icon fe fe-sliders" data-toggle="tooltip" data-placement="bottom" title="Theme Customizer"></i>
           </span>

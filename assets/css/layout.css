@@ -2,7 +2,6 @@ body{
   padding: 0px !important;
 }
 .card{
-  box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.07), 0 2px 9px 0 rgba(3, 1, 14, 0.06);
   border-radius: calc(0.75rem - 1px);
 }
 
@@ -146,7 +145,7 @@ body{
 
 .tabs-list .nav-tabs li > a.active, .tabs-list .nav-tabs li> a:hover{
   color: #fff;
-  background: #ff6f61;
+  background: #ff00e0;
 }
 
 .tabs-list .tab-content{
@@ -385,7 +384,7 @@ body{
 }
 
 .ticket-contents .item .avatar span.text-circle.admin{
-  background: #ff6f61;
+  background: #ff00e0;
 }
 
 .ticket-contents .item .content .username{
@@ -466,7 +465,7 @@ body{
 }
 
 .settings .sidebar .item li.active > a,.settings .sidebar .item li:hover > a {
-  color: #ff6f61;
+  color: #ff00e0;
   font-weight: 600;
 }
 
@@ -733,7 +732,7 @@ stroke-width: 2px;
 
 .theme-default .nav-tabs .nav-link.active, .theme-default .nav-tabs .nav-link:hover {
     border-color: #04a9f4;
-    color: #ff6f61; }
+    color: #ff00e0; }
 .theme-purple .nav-tabs .nav-link.active, .theme-purple .nav-tabs .nav-link:hover {
     border-color: #9a56ff;
     color: #9a56ff; } 

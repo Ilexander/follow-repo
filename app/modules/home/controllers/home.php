@@ -1,10 +1,12 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
- 
+
 class home extends MX_Controller {
 
     public function __construct()
     {
+        //print_r('stop');
+        //die();
         parent::__construct();
         $this->load->model(get_class($this).'_model', 'model');
         if (session('uid')) {

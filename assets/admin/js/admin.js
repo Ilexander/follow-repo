@@ -12,7 +12,7 @@ function Admin() {
 
     this.Services = function () {
         // Check post type
-        var pathGetProviderServicesURL  = PATH + 'admin/services/provider_services/';
+        // var pathGetProviderServicesURL  = PATH + 'admin/services/provider_services/';
         $(document).on("change", "select[name=add_type]", function(){
             var element = $(this),
                 mode    = element.val();

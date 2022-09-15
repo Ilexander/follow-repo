@@ -5,8 +5,8 @@
       <div class="container">
         <nav class="navbar navbar-expand-lg ">
           <a class="navbar-brand" href="#">
-            <img class="site-logo d-none" src="<?=get_option('website_logo', BASE."assets/images/logo.png")?>" alt="Webstie logo">
-            <img class="site-logo-white" src="<?=get_option('website_logo_white', BASE."assets/images/logo-white.png")?>" alt="Webstie logo">
+            <img class="site-logo d-none" src="<?=get_option('website_logo_new', BASE."assets/images/follow-sale.svg")?>" alt="Webstie logo">
+            <img class="site-logo-white" src="<?=get_option('website_logo_white_new', BASE."assets/images/follow-sale_white.svg")?>" alt="Webstie logo">
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span><i class="fe fe-menu"></i></span>
@@ -61,11 +61,29 @@
               <h2 class="head-title">
                 <?=lang("get_your_social_accounts_followers_and_likes_at_one_place_instantly")?>
               </h2>
-              <p>
-                <?=lang("save_time_managing_your_social_account_in_one_panel_where_people_buy_smm_services_such_as_facebook_ads_management_instagram_youtube_twitter_soundcloud_website_ads_and_many_more")?>
-              </p>
-              <div class="head-button m-t-40">
-                <a href="<?=cn('auth/signup')?>" class="btn btn-pill btn-outline-primary sign-up btn-lg"><?=lang("get_start_now")?></a>
+              <div class="qual-list">
+                <ul style="   font-size: 22px;
+                              color: #fff;
+                              line-height: 45px;
+                              list-style: none;
+                              display: flex;
+                              justify-content: center;
+                              flex-direction: column;
+                              text-align: left;
+                              ">
+                  <li>✅ Unbelievable Prices</li>
+                  <li>✅ Delivering Within a Minutes</li>
+                  <li>✅ Best quality services</li>
+                </ul>
+              </div>
+              <div class="banner__wrapper">
+                <div class="head-button m-t-40 m-r-10">
+                  <a href="https://follow.sale/auth/login" class="btn btn-pill btn-outline-primary sign-up btn-lg">Login</a>
+                </div>
+                <div class="head-button m-t-40">
+                  <a href="<?=cn('auth/signup')?>" class="btn btn-pill btn-outline-primary sign-up btn-lg">Sign Up</a>
+                </div>
+
               </div>
             </div>
           </div>          

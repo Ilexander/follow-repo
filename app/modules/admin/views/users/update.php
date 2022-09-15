@@ -91,6 +91,10 @@
   $redirect_url = admin_url($controller_name) . '?' . http_build_query(['field' => 'email','query' => $item['email']]);
   $form_attributes = array('class' => 'form actionForm', 'data-redirect' => $redirect_url, 'method' => "POST");
   $form_hidden = ['ids' => @$item['ids']];
+
+    $ignoreStatus = isset(json_decode($item['settings'], true)['minimum_amount_sum_ignore'])
+    ? json_decode($item['settings'], true)['minimum_amount_sum_ignore']
+    : 0;
 ?>
 <div id="main-modal-content">
   <div class="modal-dialog modal-lg" role="document">
@@ -105,6 +109,17 @@
             <?php echo render_elements_form($elements); ?>
           </div>
         </div>
+        <div class="col-md-6 col-sm-6 col-xs-6">
+            <div class="form-group">
+                <label for="projectinput5">Ignore minimum amount sum</label>
+                <label class="custom-switch mr-5">
+                    <input type="hidden" name="paypal_amount_sum" value="0">
+                    <input type="checkbox" <?=($ignoreStatus == 1) ? "checked" : ""?> onclick="changeIgnoreStatus()" name="paypal_amount_sum" class="custom-switch-input" value="1">
+                    <span class="custom-switch-indicator"></span>
+                    <span class="custom-switch-description">Paypal</span>
+                </label>
+            </div>
+        </div>
         <div class="modal-footer">
           <button type="submit" class="btn btn-primary btn-min-width mr-1 mb-1">Save</button>
           <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
@@ -113,3 +128,18 @@
     </div>
   </div>
 </div>
+<script>
+    function changeIgnoreStatus()
+    {
+        console.log(234543);
+
+        $.ajax({
+            type: "POST",
+            url: "<?=cn("user/paypal_ignore")?>",
+            data: {"user_id" : "<?=$item['id']?>"}
+        }).done(function() {
+            // notify("done", "success");
+        });
+
+    }
+</script>

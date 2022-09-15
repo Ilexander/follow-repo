@@ -4,12 +4,6 @@
 ?>
 <section class="page-title">
   <div class="row justify-content-between">
-    <div class="col-md-2">
-      <h1 class="page-title">
-        <i class="fe fe-list" aria-hidden="true"> </i> 
-        <?=lang("Services")?>
-      </h1>
-    </div>
     <div class="col-md-7">
       <?php
         if (get_option("enable_explication_service_symbol")) {
@@ -22,19 +16,6 @@
         <span class="btn round btn-secondary ">💧 = <?=lang("__drip_feed")?></span>
       </div>
       <?php } ?>
-    </div>
-    <div class="col-md-3">
-      <div class="form-group ">
-        <select  name="status" class="form-control order_by ajaxChange" data-url="<?=cn($controller_name. "/sort/")?>">
-          <option value="0"> <?=lang("all")?></option>
-          <?php 
-            if (!empty($items_category)) {
-              foreach ($items_category as $key => $category) {
-          ?>
-          <option value="<?=$key?>"><?=$category?></option>
-          <?php }}?>
-        </select>
-      </div>
     </div>
   </div>
 </section>

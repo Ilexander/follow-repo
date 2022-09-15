@@ -142,6 +142,7 @@
     <!-- Script js -->
     <script src="<?=BASE?>assets/js/process.js"></script>
     <script src="<?=BASE?>assets/js/general.js"></script>
+    <script src="<?=BASE?>assets/js/libs.min.js"></script>
     <?=htmlspecialchars_decode(get_option('embed_javascript', ''), ENT_QUOTES)?>
     <script>
       $(document).ready(function(){

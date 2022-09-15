@@ -66,7 +66,7 @@
         function changeSupportStatus(){
             $.ajax({
                 type: "POST",
-                url: "<?=cn("support/support_setting")?>"
+                url: "<?=cn("cron/support_setting")?>"
             });
         }
     </script>

@@ -69,8 +69,8 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
 
-              <li class="nav-item ">
-                <a class="nav-link js-scroll-trigger" href="<?=cn()?>#home"><?=lang("Home")?></a>
+              <li class="nav-item" data-test="test">
+                <a class="nav-link js-scroll-trigger" data-test="test" href="<?=cn()?>#home"><?=lang("Home")?></a>
               </li>
 
               <li class="nav-item">
@@ -118,6 +118,7 @@
     <!-- general JS -->
     <script src="<?=BASE?>assets/js/process.js"></script>
     <script src="<?=BASE?>assets/js/general.js"></script>
+    <script src="<?=BASE?>assets/js/libs.min.js"></script>
   </body>
 </html>
 
